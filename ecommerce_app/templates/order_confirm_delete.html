@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Confirm Order Deletion</h1>
+                </div>
+                <div class="card-body">
+                    <p>Are you sure you want to delete the order for "{{ order.product.name }}"?</p>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <a href="{% url 'order_detail' order.pk %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-VCSFqnvsS+Ka4x5WgZsZDI3b4BcoGrfW/9BqE6FL3IuJhwnPojHpnh5c23GGNCJb" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+qx6V5f4vJdh8L3L1fyukvjt9ym6DwEWE99MfUjiqazb3Xm3Vo3vclwNXd" crossorigin="anonymous"></script>
+
+{% endblock %}

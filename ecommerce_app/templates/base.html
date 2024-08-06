@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ecommerce App{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #1877f2 !important;
+        }
+        .navbar-nav .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #1877f2;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .card-body {
+            background-color: #ffffff;
+        }
+        .footer {
+            background-color: #ffffff;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'home' %}">Ecommerce App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'product_list' %}">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'customer_list' %}">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'order_list' %}">Orders</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        Welcome to Ecommerce App
+                    </div>
+                    <div class="card-body">
+                        <!-- Custom content can go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Ecommerce App. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-VCSFqnvsS+Ka4x5WgZsZDI3b4BcoGrfW/9BqE6FL3IuJhwnPojHpnh5c23GGNCJb" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+qx6V5f4vJdh8L3L1fyukvjt9ym6DwEWE99MfUjiqazb3Xm3Vo3vclwNXd" crossorigin="anonymous"></script>
+</body>
+</html>
